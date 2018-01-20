@@ -1,0 +1,31 @@
+Networking deepdive
+http://301.sh/TBD
+12:00 3 Feb 2018
+Tags: Go, networking
+
+Michael Hausenblas
+Distributed Systems Jester, Red Hat
+http://mhausenblas.info
+@mhausenblas
+
+* fmt.Sprintf("%v", mhausenblas)
+
+- Working on distributed systems in the past ~20 years, in containers space 4+ years
+- Web data and big data in applied research AT/IE and MapR
+- Container orchestrators (Mesosphere: Mesos/K8S, Red Hat: K8S)
+- Developer turned ops
+- C++, Java, Python, JavaScript/Node.js and since ~2014 a Gopher
+
+* Agenda
+
+- The `net` package
+- Socket-level programming
+- Timeouts, retries
+- Security
+- DNS
+- Best practices writing networked applications
+- Review of non-stdlib packages
+
+* Connection
+
+.code -numbers code/connection/main.go /BEGINC/,/ENDC/
