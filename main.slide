@@ -66,6 +66,10 @@ Example: simple RPC client/server
 
 * Security
 
+- `crypto/tls`
+- `golang.org/x/crypto`, for example `acme/autocert`
+- [[https://github.com/unrolled/secure][unrolled/secure]], HTTP middleware
+- [[https://github.com/justinas/nosurf][justinas/nosurf]], a Cross-Site Request Forgery protection middleware for Go
 * DNS
 
 Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
