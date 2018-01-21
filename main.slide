@@ -102,6 +102,11 @@ Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
 
 * Best practices writing networked applications
 
+- Be aware of and beware the [[https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing][Fallacies of distributed computing]], see also my [[https://github.com/gophercon/2017-talks][GopherCon 2017 talk]] _Fallacies_ _Of_ _Distributed_ _Gomputing_
+- Remember, always implement timeouts & retries, leverage [[https://golang.org/pkg/context/][context]] package
+- Pick one: either instrumentation (such as pprof, https://github.com/armon/go-metrics, etc.) or auto-observability solutions, provided by, for example, service meshes such as Istio
+- Test, test, test
+
 * Review of non-stdlib packages
 
 - Websockets
