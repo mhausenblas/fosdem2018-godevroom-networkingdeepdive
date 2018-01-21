@@ -10,11 +10,11 @@ http://mhausenblas.info
 
 * fmt.Sprintf("%v", mhausenblas)
 
-- Working on distributed systems in the past ~20 years, in containers space 4+ years
-- Web data and big data in applied research AT/IE and MapR
+- Working on distributed systems in the past 20+ years, in containers space 4+ years
 - Container orchestrators (Mesosphere: Mesos/K8S, Red Hat: K8S)
+- Web data and big data in applied research AT/IE and MapR
 - Developer turned ops
-- C++, Java, Python, JavaScript/Node.js and since ~2014 a Gopher
+- A Gopher since ~2014, before that Python, Node.js, Java, C++
 
 * Agenda
 
@@ -26,6 +26,43 @@ http://mhausenblas.info
 - Best practices writing networked applications
 - Review of non-stdlib packages
 
-* Connection
+* The net package
+
+.image img/net-package.png _ 1000
+
+* The net package
+
+- `net/http` … provides HTTP client and server implementations
+- `net/url` … parses URLs and implements query escaping
+- `net/rpc` … provides access to the exported methods of an object across a network or other I/O connection
+- `net/mail` … implements parsing of mail messages as per RFC 5322 and RFC 6532
+- `net/smtp` …  implements the Simple Mail Transfer Protocol as per RFC 5321
+- `net/textproto` … implements generic support for text-based request/response protocols in the style of HTTP, NNTP, and SMTP
+- `net/internal/socktest` … provides utilities for socket testing
+
+* The net package
+
+Example: consuming HTTP API
+
+* The net package
+
+Example: app server with HTTP API
+
+* The net package
+
+Example: simple RPC client/server
+
+* Socket-level programming
 
 .code -numbers code/connection/main.go /BEGINC/,/ENDC/
+
+
+* Timeouts, retries
+
+* Security
+
+* DNS
+
+* Best practices writing networked applications
+
+* Review of non-stdlib packages
