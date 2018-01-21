@@ -48,6 +48,8 @@ Example: consuming HTTP API
 
 Example: app server with HTTP API
 
+For a more complete example see [[https://gist.github.com/enricofoltran/10b4a980cd07cb02836f70a4ab3e72d7][this Gist]], containing code for a minimal server with basic logging, tracing, health check, and graceful shutdown.
+
 * The net package
 
 Example: simple RPC client/server
