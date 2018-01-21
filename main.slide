@@ -64,6 +64,10 @@ Example: simple RPC client/server
 
 * Timeouts, retries
 
+- https://medium.com/@nate510/don-t-use-go-s-default-http-client-4804cb19f779
+- https://blog.cloudflare.com/the-complete-guide-to-golang-net-http-timeouts/
+- https://varunksaini.com/blog/backoff-retry-in-golang/
+
 * Security
 
 - `crypto/tls`
