@@ -54,6 +54,11 @@ Example: simple RPC client/server
 
 * Socket-level programming
 
+- TCP vs UDP
+- connections
+
+* Socket-level programming
+
 .code -numbers code/connection/main.go /BEGINC/,/ENDC/
 
 
@@ -66,3 +71,9 @@ Example: simple RPC client/server
 * Best practices writing networked applications
 
 * Review of non-stdlib packages
+
+- Websockets
+- [[https://grpc.io][gRPC]] (Google)
+- [[https://github.com/twitchtv/twirp][Twirp]] (Twitch)
+- [[https://github.com/apex/gateway][apex/gateway]]
+- [[https://github.com/benjojo/dnsfs][benjojo/dnsfs]]
