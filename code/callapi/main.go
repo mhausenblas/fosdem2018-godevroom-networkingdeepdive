@@ -6,12 +6,13 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"os"
+	"strconv"
 )
 
 // BEGINC OMIT
 func main() {
-	if len(os.Args) != 2 {
-		log.Fatal("Need a URL to operate on")
+	if len(os.Args) != 3 {
+		log.Fatal("Need a URL and a limit (in bytes) to operate on.")
 	}
 	url := os.Args[1]
 	resp, err := http.Get(url)
@@ -25,7 +26,11 @@ func main() {
 	var buf [512]byte
 	reader := resp.Body
 	payload := 0
-	for {
+	limit, err := strconv.Atoi(os.Args[2])
+	if err != nil {
+		log.Fatal(err)
+	}
+	for payload < limit {
 		n, err := reader.Read(buf[0:])
 		if err != nil {
 			break
