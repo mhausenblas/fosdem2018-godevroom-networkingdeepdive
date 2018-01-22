@@ -2,7 +2,9 @@
 
 Event: FOSDEM 2018 [Go devroom](https://fosdem.org/2018/schedule/event/networking/).
 
-Many of my [code examples](https://github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/tree/master/code) are based on [Network Programming with Go by Jan Newmarch](http://tumregels.github.io/Network-Programming-with-Go/) and you can also check out the [commands](commands.md) I use.
+[Slide deck](http://go-talks.appspot.com/github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/main.slide)
+
+Note: many of my [code examples](https://github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/tree/master/code) are based on [Network Programming with Go by Jan Newmarch](http://tumregels.github.io/Network-Programming-with-Go/) and you can also check out the [commands](commands.md) I use.
 
 ## Basics
 
