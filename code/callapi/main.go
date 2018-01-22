@@ -1,5 +1,6 @@
 package main
 
+// BEGIN1 OMIT
 import (
 	"fmt"
 	"log"
@@ -9,7 +10,6 @@ import (
 	"strconv"
 )
 
-// BEGINC OMIT
 func main() {
 	if len(os.Args) != 3 {
 		log.Fatal("Need a URL and a limit (in bytes) to operate on.")
@@ -22,6 +22,8 @@ func main() {
 	// dump HTTP header info:
 	b, _ := httputil.DumpResponse(resp, false)
 	fmt.Print(string(b))
+	// END1 OMIT
+	// BEGIN2 OMIT
 	// dump response body
 	var buf [512]byte
 	reader := resp.Body
@@ -39,6 +41,5 @@ func main() {
 		fmt.Print(string(buf[0:n]))
 	}
 	fmt.Printf("\n--DONE reading %d bytes\n", payload)
+	// END2 OMIT
 }
-
-// ENDC OMIT

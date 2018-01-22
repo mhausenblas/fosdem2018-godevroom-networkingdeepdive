@@ -47,9 +47,15 @@ http://mhausenblas.info
 
 * The net package
 
-Example: consuming HTTP API
+Example: a toy `curl` in a few lines [1/2]
 
-.code -numbers code/callapi/main.go /BEGINC/,/ENDC/
+.code -numbers code/callapi/main.go /BEGIN1/,/END1/
+
+* The net package
+
+Example: a toy `curl` in a few lines [2/2]
+
+.code -numbers code/callapi/main.go /BEGIN2/,/END2/
 
 * The net package
 
