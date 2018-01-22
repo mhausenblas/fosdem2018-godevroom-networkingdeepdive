@@ -137,3 +137,13 @@ Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
 - [[https://github.com/twitchtv/twirp][Twirp]] (Twitch)
 - [[https://github.com/apex/gateway][apex/gateway]]
 - [[https://github.com/benjojo/dnsfs][benjojo/dnsfs]]
+
+
+* Further reading
+
+- [[http://tumregels.github.io/Network-Programming-with-Go/][Network Programming with Go]] by Jan Newmarch
+- [[https://blog.envoyproxy.io/introduction-to-modern-network-load-balancing-and-proxying-a57f6ff80236][Introduction to modern network load balancing and proxying]] by Matt Klein
+- [[http://polyglot.ninja/golang-making-http-requests/][Golang: Making HTTP Requests]] by masnun
+- [[http://rodaine.com/2017/05/x-files-time-rate-golang/][THE X-FILES: CONTROLLING THROUGHPUT WITH RATE.LIMITER]] by Chris Roche
+- [[https://ops.tips/blog/sending-files-via-grpc/][Sending files via gRPC]] by Ciro S. Costa
+- [[http://www.minaandrawos.com/2016/05/14/udp-vs-tcp-in-golang/][Implementing UDP vs TCP in Golang]] by Mina Andrawos
