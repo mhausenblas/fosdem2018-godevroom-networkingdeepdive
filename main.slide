@@ -64,7 +64,9 @@ For a more complete example see [[https://gist.github.com/enricofoltran/10b4a980
 
 * The net package
 
-Example: simple RPC client/server
+Example: a simple RPC client/server app
+
+.code -numbers code/rpc/main.go /BEGIN1/,/END1/
 
 * Socket-level programming
 
