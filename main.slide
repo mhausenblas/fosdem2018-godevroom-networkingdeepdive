@@ -49,6 +49,8 @@ http://mhausenblas.info
 
 Example: consuming HTTP API
 
+.code -numbers code/callapi/main.go /BEGINC/,/ENDC/
+
 * The net package
 
 Example: app server with HTTP API
