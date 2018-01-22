@@ -8,7 +8,7 @@ Distributed Systems Jester, Red Hat
 http://mhausenblas.info
 @mhausenblas
 
-* fmt.Sprintf("%v", mhausenblas)
+* me := fmt.Sprintf("%v", mhausenblas)
 
 - Working on distributed systems in the past 20+ years, in containers space 4+ years
 - Container orchestrators (Mesosphere: Mesos/K8S, Red Hat: K8S)
@@ -42,8 +42,7 @@ http://mhausenblas.info
 
 * The net package
 
-4 layer stack with symbols overlay
-
+.image img/layer-stack.png _ 1000
 
 * The net package
 
