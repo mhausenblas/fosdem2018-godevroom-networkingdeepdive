@@ -130,14 +130,17 @@ Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
 - Pick one: either instrumentation (such as pprof, https://github.com/armon/go-metrics, etc.) or auto-observability solutions, provided by, for example, service meshes such as Istio
 - Test, test, test
 
-* Review of non-stdlib packages
+* RPC
 
-- Websockets
 - [[https://grpc.io][gRPC]] (Google)
 - [[https://github.com/twitchtv/twirp][Twirp]] (Twitch)
+
+* Other relevant non-stdlib packages
+
+- [[https://github.com/gorilla/websocket][gorilla/websocket]]
 - [[https://github.com/apex/gateway][apex/gateway]]
 - [[https://github.com/benjojo/dnsfs][benjojo/dnsfs]]
-
+- [[https://github.com/google/gopacket][google/gopacket]]
 
 * Further reading
 
@@ -147,3 +150,5 @@ Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
 - [[http://rodaine.com/2017/05/x-files-time-rate-golang/][THE X-FILES: CONTROLLING THROUGHPUT WITH RATE.LIMITER]] by Chris Roche
 - [[https://ops.tips/blog/sending-files-via-grpc/][Sending files via gRPC]] by Ciro S. Costa
 - [[http://www.minaandrawos.com/2016/05/14/udp-vs-tcp-in-golang/][Implementing UDP vs TCP in Golang]] by Mina Andrawos
+- [[https://www.youtube.com/watch?v=s5l9ZdgxzXA][Hacking With Go: Packet Crafting and Manipulation in Golang Pt 1]] by SecDevOpsAI
+- [[https://blog.gopheracademy.com/advent-2017/kubernetes-ready-service/][Write a Kubernetes-ready service from zero step-by-step]] by Elena Grahovac
