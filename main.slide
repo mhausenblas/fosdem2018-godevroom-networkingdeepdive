@@ -31,7 +31,8 @@ http://mhausenblas.info
 - Security
 - DNS
 - Best practices writing networked applications
-- Review of non-stdlib packages
+- RPC
+- Other relevant non-stdlib packages
 
 * The net package
 
