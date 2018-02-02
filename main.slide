@@ -143,9 +143,9 @@ Two *types* *of* *transports*:
 
 * Timeouts, retries—basics
 
+- the network and 3rd-party services *are* *not* reliable
+- minimal overhead, natively supported
 - always use timeouts and retries
-- the network, 3rd-party services, etc. *are* *not* reliable
-- minimal overhead
 - this is a hard requirement for prod-quality software
 
 * Timeouts, retries—guidance
