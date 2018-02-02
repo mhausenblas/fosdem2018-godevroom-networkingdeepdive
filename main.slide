@@ -52,29 +52,58 @@ http://mhausenblas.info
 
 .image img/layer-stack.png _ 1000
 
-* The net package
+* The net package: curl example
 
 Example: a toy `curl` in a few lines [1/2]
 
 .code -numbers code/callapi/main.go /BEGIN1/,/END1/
 
-* The net package
+* The net package: curl example
 
 Example: a toy `curl` in a few lines [2/2]
 
 .code -numbers code/callapi/main.go /BEGIN2/,/END2/
 
-* The net package
+* The net package: app server example
 
 Example: app server with HTTP API
 
-For a more complete example see [[https://gist.github.com/enricofoltran/10b4a980cd07cb02836f70a4ab3e72d7][this Gist]], containing code for a minimal server with basic logging, tracing, health check, and graceful shutdown.
+.code -numbers code/app-server/main.go /BEGIN1/,/END1/
 
-* The net package
+* The net package: app server example
+
+For a more complete example see [[https://gist.github.com/enricofoltran/10b4a980cd07cb02836f70a4ab3e72d7][this Gist]], containing code for a minimal server with basic logging, tracing, health check, and graceful shutdown:
+
+  server := &http.Server{
+    Addr:         listenAddr,
+    Handler:      tracing(nextRequestID)(logging(logger)(router)),
+    ErrorLog:     logger,
+    ReadTimeout:  5 * time.Second,
+    WriteTimeout: 10 * time.Second,
+    IdleTimeout:  15 * time.Second,
+  }
+  ...
+  if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+    logger.Fatalf("Could not listen on %s: %v\n", listenAddr, err)
+  }
+
+* The net package: RPC client/server
 
 Example: a simple RPC client/server app
 
-.code -numbers code/rpc/main.go /BEGIN1/,/END1/
+The client:
+
+.code -numbers code/rpc/client/main.go /BEGIN1/,/END1/
+
+* The net package: RPC client/server
+
+Example: a simple RPC client/server app
+
+The server:
+
+.code -numbers code/rpc/server/main.go /BEGIN1/,/END1/
+
+
 
 * Socket-level programming
 
@@ -84,7 +113,6 @@ Example: a simple RPC client/server app
 * Socket-level programming
 
 .code -numbers code/connection/main.go /BEGINC/,/ENDC/
-
 
 * Timeouts, retries
 

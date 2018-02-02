@@ -5,20 +5,23 @@ import (
 	"net/http"
 )
 
-// Workshop defines an event.
-type Workshop struct {
-	Title        string `json:"title"`
-	Participants int    `json:"count"`
+// BEGIN1 OMIT
+// Conference defines an event.
+type Conference struct {
+	Title  string `json:"title"`
+	NumPar int    `json:"count"`
 }
 
 func main() {
-	lgworkshop := Workshop{
-		Title:        "Let’s Go! Using the Go programming language for system tasks",
-		Participants: 22,
+	fosdem18 := Conference{
+		Title:  "FOSDEM 2018",
+		NumPar: 3000,
 	}
-	http.HandleFunc("/data", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		_ = json.NewEncoder(w).Encode(lgworkshop)
+		_ = json.NewEncoder(w).Encode(fosdem18)
 	})
 	_ = http.ListenAndServe(":9876", nil)
 }
+
+// END1 OMIT
