@@ -31,15 +31,16 @@ Note that:
 
 * Agenda
 
-- The `net` package ......................  [[#5][5]]
-- Socket-level programming .... [[#15][15]]
-- Timeouts, retries ...................... [[#19][19]]
-- Security ....................................... [[#22][22]]
-- DNS .............................................. [[#24][24]]
-- RPC ............................................... [[#28][28]]
-- Other relevant packages ......... [[#30][30]]
-- Best practices ............................. [[#32][32]]
-- Further reading ......................... [[#34][34]]
+- The `net` package . . . . . . . . . . . . . [[#5][5]]
+- Socket-level programming . . .  [[#15][15]]
+- Timeouts, retries . . . . . . . . . . . . [[#19][19]]
+- Security . . . . . . . . . . . . . . . . . . . . . [[#22][22]]
+- DNS . . . . . . . . . . . . . . . . . . . . . . . . [[#24][24]]
+- RPC . . . . . . . . . . . . . . . . . . . . . . . .  [[#28][28]]
+- Other relevant packages . . . . . [[#30][30]]
+- Web frameworks . . . . . . . . . . . . [[#32][32]]
+- Best practices . . . . . . . . . . . . . . . [[#35][35]]
+- Further reading . . . . . . . . . . . . .  [[#37][37]]
 
 * The net package
 
@@ -123,8 +124,8 @@ The server:
 
 * Socket-level programming—transport layer
 
-- TCP vs UDP
-- connections
+- connection oriented (TCP), for example used by HTTP
+- connection-less/broad-cast (UDP), for example used by DNS
 
 * Socket-level programming—example
 
@@ -209,6 +210,22 @@ Besides the stdlib offering `net/rpc`:
 - [[https://github.com/benjojo/dnsfs][github.com/benjojo/dnsfs]]
 - [[https://github.com/google/gopacket][github.com/google/gopacket]]
 - [[github.com/mdlayher/ethernet][github.com/mdlayher/ethernet]]
+
+* Web frameworks
+
+* Web frameworks
+
+.image img/timesink.png _ 300
+
+* Web frameworks
+
+Seriously. If you must, read:
+
+[[https://blog.usejournal.com/top-6-web-frameworks-for-go-as-of-2017-23270e059c4b][Top 6 web frameworks for Go as of 2017]]
+
+But also read:
+
+[[https://medium.com/code-zen/why-i-don-t-use-go-web-frameworks-1087e1facfa4][Why I Don’t Use Go Web Frameworks]]
 
 * Best practices writing networked applications
 
