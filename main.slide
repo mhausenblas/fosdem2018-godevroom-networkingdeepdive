@@ -124,6 +124,14 @@ The server:
 
 * Socket-level programming—transport layer
 
+*Ports*:
+
+- privileged up to `1024` (e.g. `23` or `80`)
+- [[http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt][IANA registered]] (e.g. `2379`)
+- other (up to `65,535`)
+
+Two *types* *of* *transports*:
+
 - connection oriented (TCP), for example used by HTTP
 - connection-less/broad-cast (UDP), for example used by DNS
 

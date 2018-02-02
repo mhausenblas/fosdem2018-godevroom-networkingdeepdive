@@ -15,4 +15,6 @@ goroutine 1 [running]:
 main.main()
         /Users/mhausenblas/Dropbox/dev/work/src/github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/code/dns/main.go:14 +0xfd
 exit status 2
+
+$ cat /etc/services
 ```
