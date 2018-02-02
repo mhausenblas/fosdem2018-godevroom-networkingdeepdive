@@ -18,27 +18,36 @@ http://mhausenblas.info
 
 * Follow along, follow up
 
-- Slide deck: http://go-talks.appspot.com/github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/main.slide
-- Examples: https://github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/tree/master/code
-- Images and other artwork also via GitHub repo above
-- All content CCBY, so feel free to use and share wherever and whenever you like
+Slide deck:
+ [[http://go-talks.appspot.com/github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/main.slide][fosdem2018-godevroom-networkingdeepdive/main.slide]]
+
+Examples (code and commands):
+[[https://github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/tree/master/code][fosdem2018-godevroom-networkingdeepdive/tree/master/code]]
+
+Note that:
+
+- Screen shots and other artwork also via GitHub repo above
+- All (my) content CCBY
 
 * Agenda
 
-- The `net` package
-- Socket-level programming
-- Timeouts, retries
-- Security
-- DNS
-- Best practices writing networked applications
-- RPC
-- Other relevant non-stdlib packages
+- The `net` package ......................  [[#5][5]]
+- Socket-level programming .... [[#15][15]]
+- Timeouts, retries ...................... [[#19][19]]
+- Security ....................................... [[#22][22]]
+- DNS .............................................. [[#24][24]]
+- RPC ............................................... [[#28][28]]
+- Other relevant packages ......... [[#30][30]]
+- Best practices ............................. [[#32][32]]
+- Further reading ......................... [[#34][34]]
 
 * The net package
+
+* The net package—overview
 
 .image img/net-package.png _ 1000
 
-* The net package
+* The net package—overview
 
 - `net/http` … provides HTTP client and server implementations
 - `net/url` … parses URLs and implements query escaping
@@ -52,25 +61,25 @@ http://mhausenblas.info
 
 .image img/layer-stack.png _ 1000
 
-* The net package: curl example
+* The net package— curl example
 
 Example: a toy `curl` in a few lines [1/2]
 
 .code -numbers code/callapi/main.go /BEGIN1/,/END1/
 
-* The net package: curl example
+* The net package—curl example
 
 Example: a toy `curl` in a few lines [2/2]
 
 .code -numbers code/callapi/main.go /BEGIN2/,/END2/
 
-* The net package: app server example
+* The net package—app server example
 
 Example: app server with HTTP API
 
 .code -numbers code/app-server/main.go /BEGIN1/,/END1/
 
-* The net package: app server example
+* The net package—app server example
 
 For a more complete example see [[https://gist.github.com/enricofoltran/10b4a980cd07cb02836f70a4ab3e72d7][this Gist]], containing code for a minimal server with basic logging, tracing, health check, and graceful shutdown:
 
@@ -87,7 +96,7 @@ For a more complete example see [[https://gist.github.com/enricofoltran/10b4a980
     logger.Fatalf("Could not listen on %s: %v\n", listenAddr, err)
   }
 
-* The net package: RPC client/server
+* The net package—RPC client/server example
 
 Example: a simple RPC client/server app
 
@@ -95,7 +104,7 @@ The client:
 
 .code -numbers code/rpc/client/main.go /BEGIN1/,/END1/
 
-* The net package: RPC client/server
+* The net package—RPC client/server example
 
 Example: a simple RPC client/server app
 
@@ -105,14 +114,32 @@ The server:
 
 * Socket-level programming
 
+* Socket-level programming—network layer
+
+- IPv4 such as `127.0.0.1` … 32 bit, still dominating :(
+- IPv6 such as `::1` (which really is `0:0:0:0:0:0:0:1`) … 128 bit, not yet everywhere supported
+
+.image img/ip4vsip6.png _ 600
+
+* Socket-level programming—transport layer
+
 - TCP vs UDP
 - connections
 
-* Socket-level programming
+* Socket-level programming—example
 
-.code -numbers code/connection/main.go /BEGINC/,/ENDC/
+.code -numbers code/connection/main.go /BEGIN1/,/END1/
 
 * Timeouts, retries
+
+* Timeouts, retries—basics
+
+- always use timeouts and retries
+- the network, 3rd-party services, etc. *are* *not* reliable
+- minimal overhead
+- this is a hard requirement for prod-quality software
+
+* Timeouts, retries—guidance
 
 - https://medium.com/@nate510/don-t-use-go-s-default-http-client-4804cb19f779
 - https://blog.cloudflare.com/the-complete-guide-to-golang-net-http-timeouts/
@@ -120,26 +147,30 @@ The server:
 
 * Security
 
+* Security—relevant packages
+
 - `crypto/tls`
 - `golang.org/x/crypto`, for example `acme/autocert`
 - [[https://github.com/unrolled/secure][unrolled/secure]], HTTP middleware
 - [[https://github.com/justinas/nosurf][justinas/nosurf]], a Cross-Site Request Forgery protection middleware for Go
+
 * DNS
+
+* DNS—the Go way
 
 Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
 
 - Pure Go resolver
 - cgo-based resolver
 
-* DNS
+* DNS—example
 
 .code -numbers code/dns/main.go /BEGINC/,/ENDC/
 
-* DNS
+* DNS—example
 
   $ GODEBUG=netdns=cgo go run code/dns/main.go mh9laptop.local
   [192.168.0.17 192.168.99.1 192.168.33.1 fe80::102c:9da1:a044:49f0%en0]
-
 
   $ GODEBUG=netdns=go go run code/dns/main.go mh9laptop.local
   panic: lookup mh9laptop.local on 89.101.160.5:53: no such host
@@ -149,15 +180,11 @@ Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
           /Users/mhausenblas/Dropbox/dev/work/src/github.com/mhausenblas/fosdem2018-godevroom-networkingdeepdive/code/dns/main.go:14 +0xfd
   exit status 2
 
-
-* Best practices writing networked applications
-
-- Be aware of and beware the [[https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing][Fallacies of distributed computing]], see also my [[https://github.com/gophercon/2017-talks][GopherCon 2017 talk]] _Fallacies_ _Of_ _Distributed_ _Gomputing_
-- Remember, always implement timeouts & retries, leverage [[https://golang.org/pkg/context/][context]] package
-- Pick one: either instrumentation (such as pprof, https://github.com/armon/go-metrics, etc.) or auto-observability solutions, provided by, for example, service meshes such as Istio
-- Test, test, test
-
 * Remote Procedure Call (RPC)
+
+* RPC options
+
+Besides the stdlib offering `net/rpc`:
 
 [[https://grpc.io][grpc.io]] (Google)
 
@@ -175,11 +202,24 @@ Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
 
 * Other relevant non-stdlib packages
 
+* From Websockets to low-level sniffing
+
 - [[https://github.com/gorilla/websocket][github.com/gorilla/websocket]]
 - [[https://github.com/apex/gateway][github.com/apex/gateway]]
 - [[https://github.com/benjojo/dnsfs][github.com/benjojo/dnsfs]]
 - [[https://github.com/google/gopacket][github.com/google/gopacket]]
 - [[github.com/mdlayher/ethernet][github.com/mdlayher/ethernet]]
+
+* Best practices writing networked applications
+
+* Best practices writing networked applications
+
+- Be aware of and beware the [[https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing][Fallacies of distributed computing]], see also my [[https://github.com/gophercon/2017-talks][GopherCon 2017 talk]] _Fallacies_ _Of_ _Distributed_ _Gomputing_
+- Remember, always implement timeouts & retries, leverage [[https://golang.org/pkg/context/][context]] package
+- Pick one: either instrumentation (such as pprof, https://github.com/armon/go-metrics, etc.) or auto-observability solutions, provided by, for example, service meshes such as Istio
+- The 3Ts: test, Test, TEST!
+
+* Further reading
 
 * Further reading
 
