@@ -49,19 +49,19 @@ Note that:
 
 * The net package—overview
 
-- `net/http` … provides HTTP client and server implementations
+- `net/http` … HTTP client and server implementations
 - `net/url` … parses URLs and implements query escaping
-- `net/rpc` … provides access to the exported methods of an object across a network or other I/O connection
-- `net/mail` … implements parsing of mail messages as per RFC 5322 and RFC 6532
-- `net/smtp` …  implements the Simple Mail Transfer Protocol as per RFC 5321
-- `net/textproto` … implements generic support for text-based request/response protocols in the style of HTTP, NNTP, and SMTP
-- `net/internal/socktest` … provides utilities for socket testing
+- `net/rpc` … access to  exported methods of an object across network
+- `net/mail` … parsing of mail messages as per RFC 5322/RFC 6532
+- `net/smtp` …  the Simple Mail Transfer Protocol as per RFC 5321
+- `net/textproto` … generic support for text-based request/response protocols
+- `net/internal/socktest` … utilities for socket testing
 
-* The net package—the layer stack
+* The net package in the layer stack
 
 .image img/layer-stack.png _ 1000
 
-* The net package— curl example
+* The net package—curl example
 
 Example: a toy `curl` in a few lines [1/2]
 
