@@ -10,11 +10,11 @@ http://mhausenblas.info
 
 * me := fmt.Sprintf("%v", mhausenblas)
 
-- Working on distributed systems in the past 20+ years, in containers space 4+ years
-- Container orchestrators (Mesosphere: Mesos/K8S, Red Hat: K8S)
-- Web data and big data in applied research AT/IE and MapR
-- Developer turned ops
-- A Gopher since ~2014, before that Python, Node.js, Java, C++
+- Working on distributed systems in the past 22+ years
+- Past 4+ years into containers (Mesosphere: Mesos/K8S, Red Hat: K8S)
+- Before that: big & fast data (MapR) and applied research AT/IE
+- I'm ~ developer turned ops
+- A Gopher since ~2014, before that mainly Python, Node.js, Java, C++
 
 * Follow along, follow up
 
