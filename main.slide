@@ -48,7 +48,7 @@ http://mhausenblas.info
 - `net/textproto` … implements generic support for text-based request/response protocols in the style of HTTP, NNTP, and SMTP
 - `net/internal/socktest` … provides utilities for socket testing
 
-* The net package
+* The net package—the layer stack
 
 .image img/layer-stack.png _ 1000
 
@@ -102,8 +102,6 @@ Example: a simple RPC client/server app
 The server:
 
 .code -numbers code/rpc/server/main.go /BEGIN1/,/END1/
-
-
 
 * Socket-level programming
 
@@ -159,17 +157,29 @@ Go offers [[https://golang.org/pkg/net/#hdr-Name_Resolution][two options]]:
 - Pick one: either instrumentation (such as pprof, https://github.com/armon/go-metrics, etc.) or auto-observability solutions, provided by, for example, service meshes such as Istio
 - Test, test, test
 
-* RPC
+* Remote Procedure Call (RPC)
 
-- [[https://grpc.io][gRPC]] (Google)
-- [[https://github.com/twitchtv/twirp][Twirp]] (Twitch)
+[[https://grpc.io][grpc.io]] (Google)
+
+- CNCF project
+- fast and powerful
+- big community
+- requires HTTP 2.0
+
+[[https://github.com/twitchtv/twirp][github.com/twitchtv/twirp]] (Twitch)
+
+- simple
+- young
+- can do non-binary (JSON) representation (debugging!)
+- works with HTTP 1.1
 
 * Other relevant non-stdlib packages
 
-- [[https://github.com/gorilla/websocket][gorilla/websocket]]
-- [[https://github.com/apex/gateway][apex/gateway]]
-- [[https://github.com/benjojo/dnsfs][benjojo/dnsfs]]
-- [[https://github.com/google/gopacket][google/gopacket]]
+- [[https://github.com/gorilla/websocket][github.com/gorilla/websocket]]
+- [[https://github.com/apex/gateway][github.com/apex/gateway]]
+- [[https://github.com/benjojo/dnsfs][github.com/benjojo/dnsfs]]
+- [[https://github.com/google/gopacket][github.com/google/gopacket]]
+- [[github.com/mdlayher/ethernet][github.com/mdlayher/ethernet]]
 
 * Further reading
 
