@@ -124,11 +124,11 @@ The server:
 
 * Socket-level programming—transport layer
 
-*Ports*:
+*Ports*: [[https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers][def]]
 
-- privileged up to `1024` (e.g. `23` or `80`)
-- [[http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt][IANA registered]] (e.g. `2379`)
-- other (up to `65,535`)
+- well-known or privileged up to `1024` (e.g. `23` or `80`)
+- [[http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt][IANA registered]] from `1024` to `49151` (e.g. `2379`)
+- ephemeral (up to `65,535`)
 
 Two *types* *of* *transports*:
 
